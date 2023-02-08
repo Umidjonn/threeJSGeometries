@@ -13,15 +13,22 @@ const scene = new THREE.Scene()
 // Object
 // const geometry = new THREE.BoxGeometry(1, 1, 1, 4, 4, 4)
 
-const positionsArray = new Float32Array([
-    0,0,0,
-    0,1,0,
-    1,0,0
-])
-const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3)
-
+// Create an empty BufferGeometry
 const geometry = new THREE.BufferGeometry()
+
+// Create 50 triangles (450 values)
+const count = 50
+const positionsArray = new Float32Array(count * 3 * 3)
+for(let i = 0; i < count * 3 * 3; i++)
+{
+    positionsArray[i] = (Math.random() - 0.5) * 4
+}
+
+// Create the attribute and name it 'position'
+const positionsAttribute = new THREE.BufferAttribute(positionsArray, 3)
 geometry.setAttribute('position', positionsAttribute)
+
+
 
 // Color
 const material = new THREE.MeshBasicMaterial(
