@@ -17,11 +17,11 @@ const scene = new THREE.Scene()
 const geometry = new THREE.BufferGeometry()
 
 // Create 50 triangles (450 values)
-const count = 50
+const count = 4
 const positionsArray = new Float32Array(count * 3 * 3)
 for(let i = 0; i < count * 3 * 3; i++)
 {
-    positionsArray[i] = (Math.random() - 0.5) * 4
+    positionsArray[i] = (Math.random() - 0.5) * 2
 }
 
 // Create the attribute and name it 'position'
